@@ -30,12 +30,20 @@ for (my $x = 0; $x <= $maxx; $x++) {
 			# Print out label
 			print STDOUT "$map[$x][$y][0]\t";
 			my $index = 1;
+			
+			# Use one of the following options:
+			# The following line of code is for outputting just profcon.
+			#print STDOUT "1:$map[$x][$y][1]" if defined ($map[$x][$y][1]);
+
+			# The following block is for outputting an area around the middle prediction
 			for (my $i = -1; $i < 2; $i++) {
 				for (my $j = -1; $j < 2; $j++) {
 					print STDOUT "$index:$map[$x+$i][$y+$j][1]\t" if defined($map[$x+$i][$y+$j][1]);
 					$index++;
 				}
 			}
+			# end of block
+
 			print STDOUT "\n";
 		}
 	}
