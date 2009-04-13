@@ -5,7 +5,7 @@ my $in = shift;
 my $out = shift;
 
 open (OUT, ">$out") or die;
-foreach (system('ls' . $in . '*.crf') {
+foreach (system('ls' . $in . '/*.crf') {
 	chomp;
 	open (IN, "<$_") or die;
 	<IN>;
