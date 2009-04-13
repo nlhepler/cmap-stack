@@ -1,8 +1,10 @@
 #! /usr/bin/perl 
 use strict;
 
+my $in = shift;
+
 my $i = 0;
-foreach (`ls marcopunta/`) {
+foreach (system("ls", $in)) {
 	chomp;
 	s/\.\w+$//;
 	print STDERR $_,"\n";
